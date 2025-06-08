@@ -11,21 +11,24 @@
   <body>
     <div class="wrapper">
       <header>
-        <div class="heading">
-          <img
-            src="./images-copy/coffee-cup-svgrepo-com.svg"
-            alt="Coffee logo"
-            id="logo"
-          />
-          <p>Coffee Junkie</p>
-        </div>
+        <a href="">
+          <div class="heading">
+            <img
+              src="./images-copy/coffee-cup-svgrepo-com.svg"
+              alt="Coffee logo"
+              id="logo"
+            />
+            <p>Coffee Junkie</p>
+          </div>
+        </a>
+
         <div class="top-nav">
           <nav>
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a href="about.html">About Us</a></li>
               <li><a href="numbers.html">Numbers</a></li>
-              <li><a href="contact.html" class="active">Contact</a></li>
+              <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
           </nav>
         </div>
@@ -33,37 +36,40 @@
 
       <main>
         <div class="hero">
-          <img
-            src="./images-copy/coffee-beans.jpg"
-            alt="coffee beans"
-            class="hero"
-          />
+          <h1>Contact Us</h1>
         </div>
 
-        <section>
-          <h1>Contact Us</h1>
-          <form>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" />
-            <br />
-            <br />
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" />
-            <br />
-            <br />
-            <p style="text-indent: 0">Description</p>
-            <textarea
-              name="description"
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Your Description"
-            ></textarea>
+        <section class="contact-main-sctn">
+          <form class="form">
+            <div>
+              <p style="text-indent: 0">Your Message</p>
+              <textarea
+                name="description"
+                id=""
+                cols="45"
+                rows="10"
+                placeholder="Your Description"
+              ></textarea>
+            </div>
+            <div>
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full name"
+                id="name"
+              />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="text" name="email" id="email" />
+            </div>
+            <input type="submit" value="Send" id="button" />
           </form>
         </section>
       </main>
       <footer class="bottom">
-        <p>copyright &copy;2025</p>
+        <p>Copyright &copy;2025</p>
         <p><a href="#logo">Back to Top</a></p>
       </footer>
     </div>

@@ -1,5 +1,5 @@
 :root {
-  --color: #ffffee;
+  --color: #fafae5;
   --background-color: #111;
   --nav-color: hsl(10, 79%, 15%);
 }
@@ -17,8 +17,8 @@ body {
 .wrapper {
   max-inline-size: 900px;
   margin-inline: auto;
-  background-color: var(--background-color);
-  color: var(--color);
+  background-color: var(--color);
+  color: var(--background-color);
 }
 
 img {
@@ -32,7 +32,7 @@ a {
 
 #logo {
   max-width: 40px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 header {
@@ -45,8 +45,10 @@ header {
 }
 
 .heading {
+  font-size: 1.5em;
   text-align: center;
   margin-bottom: 0.25em;
+  color: var(--color);
 }
 
 .top-nav ul {
@@ -70,19 +72,44 @@ header {
   background-color: goldenrod;
 }
 
-h1 {
+.hero {
+  max-width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images-copy/coffee-beans.jpg);
+  background-size: cover;
+  background-position: center;
+  color: var(--color);
   font-size: 2rem;
-  text-align: center;
-  margin: 1em;
 }
 
-h2 {
-  margin-bottom: 1em;
+main h2 {
+  margin-bottom: 0.75em;
   font-size: 1.75rem;
 }
 
-main section {
+section[class$="sctn"] {
   padding: 0 3em;
+  margin-block: 4em;
+}
+
+section[class*="main"] {
+  display: flex;
+  flex-direction: column;
+}
+
+section[class^="home"] {
+  gap: 4em;
+}
+
+section[class^="about"] {
+  gap: 3em;
+}
+
+section[class^="about"] h2 {
+  text-align: center;
 }
 
 main p {
@@ -90,8 +117,56 @@ main p {
   margin-bottom: 1em;
 }
 
-footer.bottom {
-  background-color: hsl(10, 79%, 20%);
-  padding: 3em 0 2em 3em;
+.form div {
+  width: 100%;
+  margin-bottom: 1.5em;
+}
+
+.form div label,
+.form div p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.form div input,
+textarea {
+  margin-top: 0.5em;
+  width: 100%;
+  height: 3em;
+  padding: 0 0.75em;
+  outline: none;
+  border: 1px solid #1115;
+  border-radius: 0.25em;
+  color: #222a;
+}
+
+textarea {
+  height: unset;
+}
+
+.form div input:hover,
+.form div input:focus {
+  box-shadow: 0px 1px 0px #44120855;
+}
+
+.form #button {
+  width: 100%;
+  background: linear-gradient(var(--nav-color), var(--background-color));
+  height: 3em;
   color: var(--color);
+  cursor: pointer;
+  border-radius: 0.25em;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+}
+
+.form #button:hover {
+  background: linear-gradient(0deg, var(--nav-color), var(--background-color));
+}
+
+footer.bottom {
+  background-color: var(--nav-color);
+  padding: 3em;
+  color: var(--color);
+  font-size: 0.75rem;
 }
