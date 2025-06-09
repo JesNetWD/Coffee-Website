@@ -41,7 +41,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0 1em;
+  height: 90px;
 }
 
 .heading {
@@ -54,27 +55,54 @@ header {
 .top-nav ul {
   list-style-type: none;
   display: flex;
-  gap: 1.5em;
+  position: fixed;
+  top: 90px;
+  right: -100%;
+  background-color: var(--background-color);
+  width: 100%;
+  height: calc(100vh - 90px);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.top-nav ul li {
+  margin: 1.25em 0;
 }
 
 .top-nav a {
   color: var(--color);
   padding: 0.75em 1.25em;
-  border-radius: 2px;
+  font-size: 1.25rem;
 }
 
 .top-nav a:hover,
-.top-nav a:focus-visible {
-  background-color: var(--background-color);
+.top-nav a:focus-visible,
+.top-nav .active {
+  color: goldenrod;
 }
 
-.top-nav .active {
-  background-color: goldenrod;
+.checkbtn {
+  font-size: 1.75rem;
+  color: var(--color);
+  cursor: pointer;
+  display: block;
+  order: 1;
+  margin-right: 1.25em;
+}
+
+#check {
+  display: none;
+}
+
+#check:checked ~ ul {
+  right: 0;
 }
 
 .hero {
   max-width: 100%;
-  height: 60vh;
+  height: calc(75vh - 90px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,7 +110,7 @@ header {
   background-size: cover;
   background-position: center;
   color: var(--color);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 main h2 {
@@ -102,6 +130,11 @@ section[class*="main"] {
 
 section[class^="home"] {
   gap: 4em;
+}
+
+section[class^="home"] article {
+  display: grid;
+  gap: 2.5em;
 }
 
 section[class^="about"] {
@@ -163,9 +196,70 @@ textarea {
   background: linear-gradient(0deg, var(--nav-color), var(--background-color));
 }
 
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+tr {
+  border-bottom: 1px solid var(--nav-color);
+}
+
+tr:hover {
+  box-shadow: 0px 1px 0px rgba(20, 20, 20, 0.3);
+  background-color: rgba(218, 165, 32, 0.2);
+}
+
+th,
+td {
+  padding: 1.25em 1em;
+  text-align: center;
+}
+
 footer.bottom {
   background-color: var(--nav-color);
   padding: 3em;
   color: var(--color);
   font-size: 0.75rem;
 }
+
+@media only screen and (min-width: 680px) {
+  .hero {
+    font-size: 2.25rem;
+  }
+
+  section[class^="home"] article {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .checkbtn {
+    display: none;
+  }
+
+  .top-nav ul {
+    gap: 1.5em;
+    position: unset;
+    background-color: unset;
+    flex-direction: row;
+  }
+
+  .top-nav a {
+    border-radius: 2px;
+  }
+
+  .top-nav .active {
+    background-color: goldenrod;
+    color: var(--color);
+  }
+
+  .top-nav a:hover,
+  .top-nav a:focus-visible {
+    background-color: var(--background-color);
+    color: var(--color);
+  }
+}
+
+/* TODO : colors
+pictures
+nav */
