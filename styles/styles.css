@@ -137,6 +137,14 @@ section[class^="home"] article {
   gap: 2.5em;
 }
 
+section[class^="home"] a {
+  padding-bottom: 0.25em;
+}
+
+section[class^="home"] a:hover {
+  border-bottom: 1px solid blue;
+}
+
 section[class^="about"] {
   gap: 3em;
 }
