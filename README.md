@@ -85,6 +85,11 @@ I made the navbar responsive: for smaller screens we have a menu bar icon and fo
 I also made the article in the home page responsive: for larger screens every article is displayed in a 2-column grid and for smaller screens only 1-column.
 
 ```
+section[class^="home"] article {
+  display: grid;
+  gap: 2.5em;
+}
+
 @media only screen and (min-width: 768px) {
  section[class^="home"] article {
     grid-template-columns: 1fr 1fr;
