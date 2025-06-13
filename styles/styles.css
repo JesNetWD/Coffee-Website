@@ -1,7 +1,8 @@
 :root {
-  --color: #f8f4d4;
-  --background-color: #190902;
+  --background-color: #f8f4d4;
+  --color: #190902;
   --nav-color: #410d02;
+  --accent-color: goldenrod;
 }
 
 * {
@@ -16,9 +17,9 @@ body {
 
 .wrapper {
   max-inline-size: 900px;
-  margin-inline: auto;
-  background-color: var(--color);
-  color: var(--background-color);
+  margin: 0 auto;
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 img {
@@ -32,12 +33,12 @@ a {
 
 #logo {
   max-width: 40px;
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 header {
   background-color: var(--nav-color);
-  color: var(--color);
+  color: var(--background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,7 +50,7 @@ header {
   font-size: 1.5em;
   text-align: center;
   margin-bottom: 0.25em;
-  color: var(--color);
+  color: var(--background-color);
 }
 
 .top-nav ul {
@@ -58,7 +59,7 @@ header {
   position: fixed;
   top: 90px;
   right: -100%;
-  background-color: var(--background-color);
+  background-color: var(--color);
   width: 100%;
   height: calc(100vh - 90px);
   flex-direction: column;
@@ -72,20 +73,19 @@ header {
 }
 
 .top-nav a {
-  color: var(--color);
-  padding: 0.75em 1.25em;
+  color: var(--background-color);
   font-size: 1.25rem;
 }
 
 .top-nav a:hover,
 .top-nav a:focus-visible,
 .top-nav .active {
-  color: goldenrod;
+  color: var(--accent-color);
 }
 
 .checkbtn {
   font-size: 1.75rem;
-  color: var(--color);
+  color: var(--background-color);
   cursor: pointer;
   display: block;
   order: 1;
@@ -109,7 +109,7 @@ header {
   background-image: url(../images-copy/coffee-beans.jpg);
   background-size: cover;
   background-position: center;
-  color: var(--color);
+  color: var(--background-color);
   font-size: 1.5rem;
 }
 
@@ -120,7 +120,7 @@ main h2 {
 
 section[class$="sctn"] {
   padding: 0 3em;
-  margin-block: 4em;
+  margin: 4em 0;
 }
 
 section[class*="main"] {
@@ -147,6 +147,7 @@ section[class^="home"] a:hover {
 
 section[class^="about"] {
   gap: 3em;
+  text-indent: 4em;
 }
 
 section[class^="about"] h2 {
@@ -191,9 +192,9 @@ textarea {
 
 .form #button {
   width: 100%;
-  background: linear-gradient(var(--nav-color), var(--background-color));
+  background: linear-gradient(var(--nav-color), var(--color));
   height: 3em;
-  color: var(--color);
+  color: var(--background-color);
   cursor: pointer;
   border-radius: 0.25em;
   font-size: 1rem;
@@ -201,7 +202,7 @@ textarea {
 }
 
 .form #button:hover {
-  background: linear-gradient(0deg, var(--nav-color), var(--background-color));
+  background: linear-gradient(0deg, var(--nav-color), var(--color));
 }
 
 table {
@@ -215,7 +216,6 @@ tr {
 }
 
 tr:hover {
-  box-shadow: 0px 1px 0px rgba(20, 20, 20, 0.3);
   background-color: rgba(218, 165, 32, 0.2);
 }
 
@@ -228,21 +228,30 @@ td {
 footer {
   background-color: var(--nav-color);
   padding: 3em;
-  color: var(--color);
+  color: var(--background-color);
   font-size: 0.75rem;
 }
 
 footer a {
   display: inline-block;
-  color: var(--color);
+  color: var(--background-color);
   font-size: 1.5rem;
   margin-top: 0.5em;
-  background-color: var(--background-color);
+  background-color: var(--color);
   padding: 0.15em 0.25em;
 }
 
 footer a:hover {
-  color: goldenrod;
+  color: var(--accent-color);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute;
+  left: -1px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -267,19 +276,20 @@ footer a:hover {
 
   .top-nav a {
     border-radius: 2px;
+    padding: 0.75em;
+  }
+
+  .top-nav a:focus-visible,
+  .top-nav a:hover {
+    background-color: var(--color);
+    color: var(--background-color);
   }
 
   .top-nav .active {
-    background-color: goldenrod;
-    color: var(--color);
-  }
-
-  .top-nav a:hover,
-  .top-nav a:focus-visible {
-    background-color: var(--background-color);
-    color: var(--color);
+    background-color: var(--accent-color);
+    color: var(--background-color);
   }
 }
 
 /* TODO :
-pictures*/
+accessibility*/
