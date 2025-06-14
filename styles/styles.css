@@ -11,15 +11,19 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: auto 0px;
 }
 
 .wrapper {
-  max-inline-size: 900px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: var(--background-color);
   color: var(--color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 img {
@@ -38,10 +42,10 @@ a {
 
 header {
   background-color: var(--nav-color);
-  color: var(--background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 5em;
   padding: 0 1em;
   height: 90px;
 }
@@ -49,22 +53,21 @@ header {
 .heading {
   font-size: 1.5em;
   text-align: center;
-  margin-bottom: 0.25em;
   color: var(--background-color);
 }
 
 .top-nav ul {
   list-style-type: none;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 90px;
   right: -100%;
   background-color: var(--color);
   width: 100%;
   height: calc(100vh - 90px);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transition: all 0.3s;
 }
 
@@ -84,7 +87,7 @@ header {
 }
 
 .checkbtn {
-  font-size: 1.75rem;
+  font-size: 2rem;
   color: var(--background-color);
   cursor: pointer;
   display: block;
@@ -139,10 +142,19 @@ section[class^="home"] article {
 
 section[class^="home"] a {
   padding-bottom: 0.25em;
+  color: #1458c7;
+  text-transform: uppercase;
+  display: inline-block;
 }
 
-section[class^="home"] a:hover {
-  border-bottom: 1px solid blue;
+section[class^="home"] a:focus {
+  outline-color: #2175ff;
+}
+
+section[class^="home"] a:hover,
+section[class^="home"] a:focus {
+  transform: translateX(8px);
+  transition: all 0.3s;
 }
 
 section[class^="about"] {
@@ -225,23 +237,21 @@ td {
   text-align: center;
 }
 
-footer {
-  background-color: var(--nav-color);
-  padding: 3em;
-  color: var(--background-color);
-  font-size: 0.75rem;
-}
-
-footer a {
+.to-top {
   display: inline-block;
   color: var(--background-color);
   font-size: 1.5rem;
-  margin-top: 0.5em;
-  background-color: var(--color);
-  padding: 0.15em 0.25em;
+  background-color: rgba(25, 9, 2, 0.85);
+  border-radius: 4px;
+  padding: 0.25em 0.45em;
+  place-self: end;
+  position: sticky;
+  bottom: 1.5em;
+  --offset: 100px;
+  margin-top: calc(100vh + var(--offset));
 }
 
-footer a:hover {
+.to-top:hover {
   color: var(--accent-color);
 }
 
@@ -254,7 +264,18 @@ footer a:hover {
   left: -1px;
 }
 
+footer {
+  background-color: var(--nav-color);
+  padding: 3em;
+  color: var(--background-color);
+  font-size: 0.75rem;
+}
+
 @media only screen and (min-width: 768px) {
+  /* .wrapper {
+    width: 900px;
+  } */
+
   .hero {
     font-size: 2.25rem;
   }

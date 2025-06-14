@@ -111,3 +111,5 @@ I also hope to implement some javascript as I learn.
 - [HTML & CSS for Absolute Beginners: Introduction](https://www.youtube.com/watch?v=1L2YiWdaUDM&list=PL4-IK0AVhVjOJs_UjdQeyEZ_cmEV3uJvx&pp=0gcJCWMEOCosWNin)
 
 - [How to Create Responsive Navigation Bar using HTML and CSS](https://www.youtube.com/watch?v=oLgtucwjVII&pp=ygUlY29kaW5nbmVwYWwgcmVzcG9uc2l2ZSBuYXZpZ2F0aW9uIGJhctIHCQneCQGHKiGM7w%3D%3D)
+
+- [How to Make an Animated Back to Top Button Using Only CSS](https://www.freecodecamp.org/news/css-only-back-to-top-button/)
