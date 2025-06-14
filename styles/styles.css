@@ -154,6 +154,7 @@ section[class^="home"] a:focus {
 section[class^="home"] a:hover,
 section[class^="home"] a:focus {
   transform: translateX(8px);
+  color: #2175ff;
   transition: all 0.3s;
 }
 
@@ -198,8 +199,10 @@ textarea {
 }
 
 .form div input:hover,
-.form div input:focus {
-  box-shadow: 0px 1px 0px #44120855;
+.form div input:focus,
+textarea:hover,
+textarea:focus {
+  box-shadow: 0px 1px 0px rgba(68, 18, 8, 0.4);
 }
 
 .form #button {
